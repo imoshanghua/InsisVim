@@ -2,6 +2,7 @@ local gitsigns = pRequire("gitsigns")
 local cfg = require("insis").config.git
 
 if gitsigns and cfg and cfg.enable then
+  -- vim.notify(vim.inspect(cfg.enable), vim.log.levels.INFO)
   local gitsigns_on_attach = function(bufnr)
     local gs = package.loaded.gitsigns
 
