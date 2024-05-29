@@ -56,6 +56,13 @@ require("insis").setup({
     enable = true,
   },
 
+  php = {
+    enable = true,
+    lsp = "intelephense",
+    formatter = "phpcbf",
+    format_on_save = true,
+  },
+
   --[[
   ruby = {
     enable = true,
