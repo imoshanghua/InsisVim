@@ -1,0 +1,102 @@
+local common = require("insis.lsp.common-config")
+
+local opts = {
+  cmd = { "intelephense", "--stdio" },
+  capabilities = common.capabilities,
+  flags = common.flags,
+  on_attach = function(client, bufnr)
+    common.disableFormat(client) -- 禁用 LSP 的格式化功能，以便使用 null-ls
+    common.keyAttach(bufnr) -- 设置键绑定
+  end,
+
+  settings = {
+    intelephense = {
+      -- 允许索引的最大文件大小
+      files = {
+        maxSize = 5000000,
+      },
+      stubs = {
+        "apache",
+        "bcmath",
+        "bz2",
+        "calendar",
+        "com_dotnet",
+        "Core",
+        "ctype",
+        "curl",
+        "date",
+        "dba",
+        "dom",
+        "enchant",
+        "exif",
+        "FFI",
+        "fileinfo",
+        "filter",
+        "fpm",
+        "ftp",
+        "gd",
+        "gettext",
+        "gmp",
+        "hash",
+        "iconv",
+        "imap",
+        "intl",
+        "json",
+        "ldap",
+        "libxml",
+        "mbstring",
+        "meta",
+        "mysqli",
+        "oci8",
+        "odbc",
+        "openssl",
+        "pcntl",
+        "pcre",
+        "PDO",
+        "pdo_ibm",
+        "pdo_mysql",
+        "pdo_pgsql",
+        "pdo_sqlite",
+        "pgsql",
+        "Phar",
+        "posix",
+        "pspell",
+        "readline",
+        "Reflection",
+        "session",
+        "shmop",
+        "SimpleXML",
+        "snmp",
+        "soap",
+        "sockets",
+        "sodium",
+        "SPL",
+        "sqlite3",
+        "standard",
+        "superglobals",
+        "sysvmsg",
+        "sysvsem",
+        "sysvshm",
+        "tidy",
+        "tokenizer",
+        "xml",
+        "xmlreader",
+        "xmlrpc",
+        "xmlwriter",
+        "xsl",
+        "Zend OPcache",
+        "zip",
+        "zlib",
+      },
+      telemetry = {
+        enable = false,
+      },
+    },
+  },
+}
+
+return {
+  on_setup = function(server)
+    server.setup(opts)
+  end,
+}
