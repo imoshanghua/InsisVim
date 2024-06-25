@@ -32,7 +32,7 @@ require("insis").setup({
     -- pip install black
     -- asdf reshim python
     formatter = "black",
-    format_on_save = false,
+    format_on_save = true,
   },
 
   bash = {
@@ -62,19 +62,4 @@ require("insis").setup({
     formatter = "phpcbf",
     format_on_save = true,
   },
-
-  --[[
-  ruby = {
-    enable = true,
-    lsp = "ruby_ls",
-    -- gem install rubocop
-    formatter = "rubocop",
-    format_on_save = false,
-  },
-
-  golang = {
-    enable = true,
-  },
-  ]]
-  --
 })
