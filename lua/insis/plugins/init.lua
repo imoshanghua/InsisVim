@@ -168,6 +168,8 @@ return {
     end,
   },
 
+  { "mg979/vim-visual-multi" },
+
   ------------------ Markdown -------------------------------------------------
   {
     "jakewvincent/mkdnflow.nvim",
