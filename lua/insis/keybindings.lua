@@ -20,10 +20,12 @@ vim.g.mapleader = keys.leader_key
 vim.g.maplocalleader = keys.leader_key
 
 -- save && quit
-keymap("n", keys.n_save, "<CMD>w<CR>")
+keymap({ "i", "n" }, keys.n_save, "<CMD>w<CR>")
+keymap("n", keys.n_save_all, "<CMD>wa<CR>")
+keymap("n", keys.n_quit, "<CMD>q<CR>")
+keymap("n", keys.n_quit_all, "<CMD>qa<CR>")
 keymap("n", keys.n_force_quit, "<CMD>qa!<CR>")
--- keymap("n", keys.n_save_quit, "<CMD>wq<CR>")
--- keymap("n", keys.n_save_all, "<CMD>wa<CR>")
+--keymap("n", keys.n_quit, "<CMD>q<CR>")
 -- keymap("n", keys.n_save_all_quit, "<CMD>wqa<CR>")
 
 -- $ jump to the end without space (swap $ and g_)
@@ -103,6 +105,12 @@ end
 
 -- Esc back to Normal mode
 keymap("t", keys.terminal_to_normal, "<C-\\><C-n>")
+keymap("i", keys.insert_to_normal, "<Esc>")
+
+--
+keymap("n", "vv", "V")
+keymap("x", "<leader>y", '"+y')
+keymap("x", "<leader>p", '"+p')
 
 -- DEPRECATED :Terminal kes
 
