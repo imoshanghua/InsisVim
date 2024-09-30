@@ -55,4 +55,11 @@ require("insis").setup({
   markdown = {
     enable = true,
   },
+
+  php = {
+    enable = true,
+    lsp = "intelephense",
+    formatter = "phpcbf",
+    format_on_save = true,
+  },
 })

@@ -38,6 +38,7 @@
 ---@field java? JavaConfig
 ---@field git? GitConfig git user config
 ---@field mirror? MirrorConfig mirror config
+---@field php? PHPConfig pho config
 
 local UserConfig = {
 
@@ -551,6 +552,16 @@ local UserConfig = {
     packer = "https://github.com/",
     -- TODO: LSP DAP mirror config
     -- carefully change these value
+  },
+
+  ---@class PHPConfig
+  php = {
+    enable = false,
+    lsp = "intelephense",
+    formatter = "phpcbf",
+    format_on_save = false,
+    -- 可以将 PSR12 替换为其他标准，例如：PEAR, PSR1, PSR2,, Zend...
+    coding_standard = "PSR12",
   },
 }
 

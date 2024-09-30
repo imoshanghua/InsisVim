@@ -93,6 +93,9 @@ local init = function(userConfig)
   if userConfig.java.enable then
     table.insert(enabledEnv, require("insis.env.java")(userConfig.java))
   end
+  if userConfig.php.enable then
+    table.insert(enabledEnv, require("insis.env.php")(userConfig.php))
+  end
 end
 
 -- loop through enabledEnv list and call envFunc on each Env file

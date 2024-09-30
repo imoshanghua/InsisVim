@@ -487,6 +487,24 @@ require("insis").setup({
 ```
 </details>
 
+<details>
+<summary>PHP 开发</summary>
+  
+```lua
+require("insis").setup({
+  php = {
+    enable = false,
+    lsp = "intelephense",
+    formatter = "phpcbf",
+    format_on_save = false,
+    -- 也可以将 PSR12 替换为其他标准，例如：PEAR, PSR1, PSR2,, Zend...
+    coding_standard = "PSR12",
+  },
+})
+```
+</details>
+
+
 ## 日常使用
 
 ### 常用命令
